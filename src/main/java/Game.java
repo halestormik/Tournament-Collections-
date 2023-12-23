@@ -7,12 +7,10 @@ public class Game {
     HashMap<String, Player> hashPlayers = new HashMap<>(); // список игроков
 
     public Player findByName(String playerName) { // поиск игрока по имени в списке игроков
-
-        //  for (String key : hashPlayers.keySet()) {
+        
         if (hashPlayers.containsKey(playerName)) {
             return hashPlayers.get(playerName);
         }
-        //}
         return null;
     }
 

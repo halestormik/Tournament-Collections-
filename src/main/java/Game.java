@@ -1,24 +1,21 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
 public class Game {
-
-    List<Player> players = new ArrayList<>(); // список игроков
+    HashMap<String, Player> hashPlayers = new HashMap<>(); // список игроков
 
     public Player findByName(String playerName) { // поиск игрока по имени в списке игроков
-
-        for (int i = 0; i < players.size(); i++) {
-
-            if (playerName.equals(players.get(i).getName())) {
-                return players.get(i);
-            }
+        
+        if (hashPlayers.containsKey(playerName)) {
+            return hashPlayers.get(playerName);
         }
         return null;
     }
 
-    public void register(Player player) { // метод регистрации игрока на турнир
-        players.add(player);
+    public void register(String playerName, Player player) { // метод регистрации игрока на турнир
+        hashPlayers.put(playerName, player);
     }
 
     public int round(String playerName1, String playerName2) {

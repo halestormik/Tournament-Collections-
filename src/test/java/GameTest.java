@@ -56,7 +56,8 @@ public class GameTest {
 
         tournament.register(player2.getName(), player2);
 
-        Assertions.assertThrows(NotRegisteredException.class, () -> tournament.round(player1.getName(), player2.getName()));
+        Assertions.assertThrows(NotRegisteredException.class,
+                () -> tournament.round(player1.getName(), player2.getName()));
     }
 
     @Test
@@ -65,6 +66,7 @@ public class GameTest {
 
         tournament.register(player1.getName(), player1);
 
-        Assertions.assertThrows(NotRegisteredException.class, () -> tournament.round(player1.getName(), player2.getName()));
+        Assertions.assertThrows(NotRegisteredException.class,
+                () -> tournament.round(player1.getName(), player2.getName()));
     }
 }
